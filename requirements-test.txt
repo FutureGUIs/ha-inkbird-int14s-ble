@@ -1,0 +1,6 @@
+homeassistant==2026.9.3
+pytest==9.0.3
+pytest-asyncio==1.4.0
+pytest-mock==3.16.0
+pytest-homeassistant-custom-component==0.13.366
+ruff==0.16.10
