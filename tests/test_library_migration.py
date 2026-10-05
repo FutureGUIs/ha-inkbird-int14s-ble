@@ -21,7 +21,7 @@ async def test_coordinator_uses_library_and_maps_write_errors_to_ha():
 @pytest.mark.asyncio
 async def test_manual_address_validation_remains_available(mocker):
     mocker.patch(
-        "custom_components.inkbird_int14s_ble.config_flow.bluetooth.async_discovered_service_info",
+        "custom_components.inkbird_int14s_ble.config_flow.async_discovered_service_info",
         return_value=[],
     )
     flow = InkbirdConfigFlow()
