@@ -252,6 +252,10 @@ async def test_missing_scanner_retries_and_recovers(mocker):
         "custom_components.inkbird_int14s_ble.coordinator.bluetooth.async_scanner_count",
         side_effect=[0, 1],
     )
+    mocker.patch(
+        "custom_components.inkbird_int14s_ble.coordinator.bluetooth.async_ble_device_from_address",
+        return_value=MagicMock(),
+    )
     observed_errors = []
     c.async_add_listener(lambda: observed_errors.append(c.last_error))
 
