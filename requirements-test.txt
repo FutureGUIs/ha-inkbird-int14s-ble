@@ -4,3 +4,6 @@ pytest-asyncio==1.4.0
 pytest-mock==3.16.0
 pytest-homeassistant-custom-component==0.13.366
 ruff==0.16.10
+# Home Assistant's Bluetooth integration imports USB discovery on Linux.
+aiousbwatcher==1.1.2; sys_platform == 'linux'
+serialx==1.10.0; sys_platform == 'linux'
