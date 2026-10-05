@@ -24,13 +24,14 @@ jobs:
           root = Path.cwd().resolve()
           files = json.loads(Path("repository-files.json").read_text())
           for name, content in files.items():
+              if name.startswith(".github/workflows/"):
+                  continue
               path = (root / name).resolve()
               if not path.is_relative_to(root) or ".git" in path.relative_to(root).parts:
                   raise ValueError("Invalid repository path")
               path.parent.mkdir(parents=True, exist_ok=True)
               path.write_bytes(base64.b64decode(content, validate=True))
           Path("repository-files.json").unlink()
-          Path(".github/workflows/publish.yml").unlink()
           PY
           python scripts/validate_package.py
           git config user.name 'github-actions[bot]'
