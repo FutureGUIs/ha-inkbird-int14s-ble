@@ -1,0 +1,40 @@
+name: Publish initial integration
+
+on:
+  push:
+    paths:
+      - .github/workflows/publish.yml
+      - repository-files.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the prepared source tree
+        run: |
+          python - <<'PY'
+          import base64
+          import json
+          from pathlib import Path
+          root = Path.cwd().resolve()
+          files = json.loads(Path("repository-files.json").read_text())
+          for name, content in files.items():
+              path = (root / name).resolve()
+              if not path.is_relative_to(root) or ".git" in path.relative_to(root).parts:
+                  raise ValueError("Invalid repository path")
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_bytes(base64.b64decode(content, validate=True))
+          Path("repository-files.json").unlink()
+          Path(".github/workflows/publish.yml").unlink()
+          PY
+          python scripts/validate_package.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit -m 'feat: publish INT-14S-BW Bluetooth integration for HACS'
+          git push
