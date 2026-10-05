@@ -1,0 +1,46 @@
+{
+  "domain": "inkbird_int14s_ble",
+  "name": "INKBIRD INT-14S Bluetooth",
+  "bluetooth": [
+    {
+      "local_name": "INT-14S-BW*",
+      "connectable": true
+    },
+    {
+      "local_name": "Int14sbw*",
+      "connectable": true
+    },
+    {
+      "local_name": "INT14SBW*",
+      "connectable": true
+    },
+    {
+      "local_name": "Int14Sbw*",
+      "connectable": true
+    },
+    {
+      "local_name": "INT14S*",
+      "connectable": true
+    }
+  ],
+  "codeowners": [
+    "@FutureGUIs"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "bluetooth"
+  ],
+  "documentation": "https://github.com/FutureGUIs/ha-inkbird-int14s-ble",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/FutureGUIs/ha-inkbird-int14s-ble/issues",
+  "loggers": [
+    "bleak_retry_connector",
+    "bleak_esphome",
+    "habluetooth"
+  ],
+  "requirements": [
+    "bleak-retry-connector>=3.6.0"
+  ],
+  "version": "0.2.1"
+}

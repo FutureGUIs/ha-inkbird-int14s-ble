@@ -1,0 +1,25 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Add INKBIRD INT-14S Bluetooth",
+        "description": "Enter the station Bluetooth address. Nearby stations: {discovered}. Close other Bluetooth apps using this station.",
+        "data": {
+          "address": "Bluetooth address"
+        }
+      },
+      "confirm": {
+        "title": "Add INKBIRD INT-14S Bluetooth",
+        "description": "Connect to the station at {address}?"
+      }
+    },
+    "error": {
+      "invalid_address": "Use a Bluetooth address in AA:BB:CC:DD:EE:FF format."
+    },
+    "abort": {
+      "already_configured": "This station is already configured.",
+      "not_supported": "This device is not an INT-14S-BW."
+    }
+  }
+}

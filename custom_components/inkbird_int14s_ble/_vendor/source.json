@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/FutureGUIs/inkbird-ble",
+  "branch": "int14s-bw",
+  "base_revision": "c88a839d2275ea8a773b61b50f028bb23baeec37",
+  "status": "bundled source snapshot published with ha-inkbird-int14s-ble",
+  "sha256": {
+    "__init__.py": "fbc50a39fe2d88b95c5f467e7b90e0cfa3300b3a915ceeaadc80135de9850644",
+    "auth.py": "b85aa0ea3bc9e324c268255264637c75800dba425fb0c3e5a78404badf134f24",
+    "client.py": "71193a5218a224e0959a2c3643a55f2d84951094b906bd19ccfb4c53013e144a",
+    "const.py": "cc5d60491d66c30ace47f1e44c6773136d65f920761c23b0567e9efa27b0006e",
+    "protocol.py": "2bfdf1bae868f5116041aa34b75bb6e36aaf58ef70c6e6b03808e08128b2ba2b"
+  },
+  "published_repository": "https://github.com/FutureGUIs/ha-inkbird-int14s-ble"
+}
